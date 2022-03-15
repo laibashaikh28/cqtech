@@ -66,10 +66,36 @@ const bookHeading = {
 };
 
 export default function ListPage() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <TabsPage
-      firstTab={<EditEntites heading={studentHeading} rows={studentRows} />}
-      secondTab={<EditEntites heading={bookHeading} rows={bookRows} />}
+      firstTab={
+        <EditEntites
+          open={open}
+          handleClose={handleClose}
+          handleOpen={handleOpen}
+          heading={studentHeading}
+          rows={studentRows}
+          student={true}
+        />
+      }
+      secondTab={
+        <EditEntites
+          heading={bookHeading}
+          rows={bookRows}
+          open={open}
+          handleClose={handleClose}
+          handleOpen={handleOpen}
+        />
+      }
     />
   );
 }
