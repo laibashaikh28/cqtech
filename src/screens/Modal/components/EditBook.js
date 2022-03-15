@@ -28,7 +28,7 @@ export default function EditBook({ open, handleClose }) {
         aria-describedby="parent-modal-description"
       >
         <Box sx={{ ...style, width: 400 }}>
-          <h2 id="parent-modal-title">Edit Student</h2>
+          <h2 id="parent-modal-title">Edit Book</h2>
 
           <TextField id="filled-basic" label="Book Name" variant="filled" />
           <TextField id="filled-basic" label="Author" variant="filled" />
